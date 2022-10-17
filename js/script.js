@@ -10,26 +10,21 @@
 const grid = document.querySelector(".row");
 
 // btn
-const btnPlay = document.getElementById("play")
-
-
-// create the grid boxes  FUNCTION <-----
-let gridBox = document.createElement("div") 
-gridBox.classList.add("box");
-gridBox.innerHTML = "bye bye";
-
-// create a random number generator with function that produce number between two ranges min max and that not prodeuce duplicated numbers
-// let randomNumber = 0
-// function getRandomNumber(min, max) {
-//      randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
-//     return randomNumber;
-//   }
-
+const btnPlay = document.getElementById("play"); 
 
 const generatedNumber = consecutiveNumberGen (100);
 console.log(generatedNumber)
 
+btnPlay.addEventListener("click",function(){
+    // generate boxes in the html
+    const box = boxGenerator(generatedNumber);
+})
 
+
+
+
+
+// FUNCTION
 /**
  * function that gives you an arry with consecutive number   
  * @param {number}} arrayLenght
@@ -43,3 +38,31 @@ function consecutiveNumberGen (arrayLenght){
     }
     return boxNumber
 }
+
+// Ui Function
+
+/**
+ * create the grid boxes generator 
+ * @param {Array} numberOfBoxes
+ * @returns {object} 
+ */
+function boxGenerator(numberOfBoxes) {
+    for(let i = 1; i <= numberOfBoxes.length; i++){
+        let number = i
+        let gridBox = document.createElement("div") 
+        gridBox.classList.add("box");
+        gridBox.innerHTML = number;
+        gridBox.addEventListener("click", function(){
+            this.classList.toggle("bg-blue");
+            console.log(i)
+        })
+        grid.append(gridBox)
+    }
+}
+
+// create a random number generator with function that produce number between two ranges min max and that not prodeuce duplicated numbers
+// let randomNumber = 0
+// function getRandomNumber(min, max) {
+    //      randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
+    //     return randomNumber;
+    //   }
