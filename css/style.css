@@ -50,8 +50,6 @@ footer{
 }
 
 .box{
-    width: calc(100% / 10);
-    height:  calc(100% / 10);
     border: 1px solid black;
     
     display: flex;
@@ -59,3 +57,17 @@ footer{
     align-items: center;
 }
 
+.level-size-hard{
+    width: calc(100% / 10);
+    height:  calc(100% / 10);
+}
+
+.level-size-medium{
+    width: calc(100% / 9);
+    height:  calc(100% / 9);
+}
+
+.level-size-easy{
+    width: calc(100% / 7);
+    height:  calc(100% / 7);
+}
