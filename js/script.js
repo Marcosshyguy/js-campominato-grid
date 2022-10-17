@@ -17,16 +17,43 @@ const difficulty = document.getElementById("difficulty");
 const difficultyEz = difficulty.options[3];
 const difficultyMid = difficulty.options[2];
 const difficultyHard = difficulty.options[1];
-console.log(difficultyEz,difficultyMid,difficultyHard)
+console.log(parseInt(difficultyEz.value), difficultyMid,difficultyHard)
 
 const generatedNumber = consecutiveNumberGen (100);
 console.log(generatedNumber)
 
+// BONUS Listener 
 btnPlay.addEventListener("click",function(){
-    // generate boxes in the html
-    const box = boxGenerator(generatedNumber);
-})
 
+    if(difficultyEz.selected == true){
+        // generate number
+        const generatedNumber = consecutiveNumberGen (parseInt(difficultyEz.value));
+        console.log(generatedNumber)
+        
+        // generate boxes in the html
+        const box = boxGenerator(generatedNumber);
+
+    }else if (difficultyMid.selected == true){
+        // generate number
+        const generatedNumber = consecutiveNumberGen (parseInt(difficultyMid.value));
+        console.log(generatedNumber)
+
+        
+        // generate boxes in the html
+        const box = boxGenerator(generatedNumber);
+    
+    }else if(difficultyHard.selected == true){
+        // generate number
+        const generatedNumber = consecutiveNumberGen (parseInt(difficultyHard.value));
+        
+        console.log(generatedNumber)
+        // generate boxes in the html
+        const box = boxGenerator(generatedNumber);
+
+    }else{
+        alert ("Scegli una difficoltà")
+    }
+})
 
 
 
