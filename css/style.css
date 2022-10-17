@@ -4,7 +4,10 @@
     box-sizing: border-box;
 }
 
-
+/* color */
+.bg-blue{
+    background-color: aqua;
+}
 /* common */
 /* section */
 .wrapper{
@@ -30,8 +33,7 @@ footer{
     height: calc(100vh - 200px);
     display: flex;
     justify-content: center;
-    align-items: center
-    ;
+    align-items: center;
 }
 
 .container{
@@ -51,5 +53,9 @@ footer{
     width: calc(100% / 10);
     height:  calc(100% / 10);
     border: 1px solid black;
-    text-align: center;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+

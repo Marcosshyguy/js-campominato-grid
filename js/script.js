@@ -12,6 +12,13 @@ const grid = document.querySelector(".row");
 // btn
 const btnPlay = document.getElementById("play"); 
 
+// select options
+const difficulty = document.getElementById("difficulty");
+const difficultyEz = difficulty.options[3];
+const difficultyMid = difficulty.options[2];
+const difficultyHard = difficulty.options[1];
+console.log(difficultyEz,difficultyMid,difficultyHard)
+
 const generatedNumber = consecutiveNumberGen (100);
 console.log(generatedNumber)
 
@@ -19,7 +26,6 @@ btnPlay.addEventListener("click",function(){
     // generate boxes in the html
     const box = boxGenerator(generatedNumber);
 })
-
 
 
 
