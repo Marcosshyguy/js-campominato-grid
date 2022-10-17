@@ -22,17 +22,19 @@ console.log(parseInt(difficultyEz.value), difficultyMid,difficultyHard)
 const generatedNumber = consecutiveNumberGen (100);
 console.log(generatedNumber)
 
+
+
 // BONUS Listener 
 btnPlay.addEventListener("click",function(){
-
+    // LEVEL EASY
     if(difficultyEz.selected == true){
         // generate number
         const generatedNumber = consecutiveNumberGen (parseInt(difficultyEz.value));
         console.log(generatedNumber)
         
         // generate boxes in the html
-        const box = boxGenerator(generatedNumber);
-
+        const box = boxGenerator(generatedNumber, "level-size-easy");
+        // LEVEL MEDIUM
     }else if (difficultyMid.selected == true){
         // generate number
         const generatedNumber = consecutiveNumberGen (parseInt(difficultyMid.value));
@@ -40,16 +42,16 @@ btnPlay.addEventListener("click",function(){
 
         
         // generate boxes in the html
-        const box = boxGenerator(generatedNumber);
-    
+        const box = boxGenerator(generatedNumber, "level-size-medium");
+    // LVEL HARD
     }else if(difficultyHard.selected == true){
         // generate number
         const generatedNumber = consecutiveNumberGen (parseInt(difficultyHard.value));
         
         console.log(generatedNumber)
         // generate boxes in the html
-        const box = boxGenerator(generatedNumber);
-
+        const box = boxGenerator(generatedNumber, "level-size-hard");
+        // NO LEVEL SELCTED
     }else{
         alert ("Scegli una difficoltà")
     }
@@ -75,15 +77,17 @@ function consecutiveNumberGen (arrayLenght){
 // Ui Function
 
 /**
- * create the grid boxes generator 
+ * create the grid boxes generator and use the result of consecutiveNumberGen as a param
  * @param {Array} numberOfBoxes
+ * @param {string} levelBoxSize adds css class size that depend on the difficulty levele chosed
  * @returns {object} 
  */
-function boxGenerator(numberOfBoxes) {
+function boxGenerator(numberOfBoxes, levelBoxSize) {
     for(let i = 1; i <= numberOfBoxes.length; i++){
         let number = i
-        let gridBox = document.createElement("div") 
-        gridBox.classList.add("box");
+        let gridBox = document.createElement("div")
+        gridBox.classList.add("box"); 
+        gridBox.classList.add(levelBoxSize);
         gridBox.innerHTML = number;
         gridBox.addEventListener("click", function(){
             this.classList.toggle("bg-blue");
