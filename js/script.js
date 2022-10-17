@@ -17,6 +17,29 @@ const btnPlay = document.getElementById("play")
 let gridBox = document.createElement("div") 
 gridBox.classList.add("box");
 gridBox.innerHTML = "bye bye";
-grid.append(gridBox);
 
 // create a random number generator with function that produce number between two ranges min max and that not prodeuce duplicated numbers
+// let randomNumber = 0
+// function getRandomNumber(min, max) {
+//      randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
+//     return randomNumber;
+//   }
+
+
+const generatedNumber = consecutiveNumberGen (100);
+console.log(generatedNumber)
+
+
+/**
+ * function that gives you an arry with consecutive number   
+ * @param {number}} arrayLenght
+ * @returns {object} boxNumber
+ */
+function consecutiveNumberGen (arrayLenght){
+    let boxNumber = []
+    for(let arrayIndex = 1; arrayIndex <= arrayLenght; arrayIndex++) {
+        boxNumber.push(arrayIndex)
+        
+    }
+    return boxNumber
+}
